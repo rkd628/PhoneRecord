@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PhoneRecord</string>
+    <string name="btnstr">Toggle</string>
 </resources>
