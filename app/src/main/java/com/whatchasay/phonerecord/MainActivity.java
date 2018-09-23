@@ -47,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
 //        intentFilter.addAction(ACTION_POWER_DISCONNECTED);
 //        getApplication().registerReceiver(mPowerConncetionRecevier,intentFilter);
 
-        File newxmlfile = new File(getFilesDir(),"temp.xml");
-        Log.d("seokil",getFilesDir().toString());
+        File newxmlfile = new File("/sdcard/tempp","temp.xml");
+        Log.d("seokil","done1");
         try {
             newxmlfile.createNewFile();
         } catch (IOException e) {
@@ -63,8 +63,7 @@ public class MainActivity extends AppCompatActivity {
         XmlSerializer serializer = Xml.newSerializer();
         try {
             serializer.setOutput(fileos, "UTF-8");
-            serializer.startDocument(null, Boolean.valueOf(true));
-            serializer.setFeature("http://xmlpull.org/v1/doc/features.html#indent-output", true);
+            serializer.startDocument("UTF-8", true);
             serializer.startTag(null, "root");
             serializer.startTag(null, "Child1");
             serializer.endTag(null, "Child1");
@@ -83,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e) {
             Log.e("Exception", "Exception occured in wroting");
         }
-
+        Log.d("seokil","done2");
     }
 
     public void temp(View v) {
